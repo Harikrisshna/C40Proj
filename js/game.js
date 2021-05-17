@@ -56,11 +56,20 @@ class Game{
                      players[index - 1].y = y;
                        
                      if(index === player.index){
-                         
-                       //add code to display the player's name on the respective basket.
+                               
+                        fill("black");
+                        textSize(25);
+                        text(allPlayers[plr].name ,x-25,y+25);
+
+                        
+                    }
+                    textSize(25);
+                    fill("white");
+                    text("player1: "+allPlayers.player1.score,50,50)
+                    text("player2: "+allPlayers.player2.score,50,100)
 
                          
-                     }
+                     
                     
                       
                  
@@ -102,6 +111,9 @@ class Game{
                     for (var i = 0; i < fruitGroup.length; i++) {
                         if (fruitGroup.get(i).isTouching(players)) {
                             fruitGroup.get(i).destroy();
+                            player.score = player.score +1;
+                            console.log(player1);
+                            player.update();
                          
                             
                         }
